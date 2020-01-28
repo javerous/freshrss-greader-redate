@@ -1,0 +1,36 @@
+<form action="<?= _url('extension', 'configure', 'e', urlencode($this->getName())) ?>" method="post">
+	<input type="hidden" name="_csrf" value="<?=  FreshRSS_Auth::csrfToken() ?>" />
+	<div class="form-group">
+
+		<h4><?= _t('ext.greader_redate.explanation') ?></h4>
+
+		<p><?= _t('ext.greader_redate.instruction') ?></p>
+
+		<div class="group-controls">
+			<label class="checkbox" for="gr_reeder">
+				<input type="checkbox" id="gr_reeder" name="gr_reeder" value="1" <?= $this->isReederEnabled() ? 'checked' : '' ?>>
+				<?= _t('ext.greader_redate.reeder') ?>
+			</label>
+		</div>
+
+		<div class="group-controls">
+			<label class="checkbox" for="gr_easyrss">
+				<input type="checkbox" id="gr_easyrss" name="gr_easyrss" value="1" <?= $this->isEasyRSSEnabled() ? 'checked' : '' ?>>
+				<?= _t('ext.greader_redate.easy_rss') ?>
+			</label>
+		</div>
+
+	</div>
+
+	<div class="form-group form-actions">
+		<div class="group-controls">
+			<button type="submit" class="btn btn-important"><?= _t('gen.action.submit') ?></button>
+			<button type="reset" class="btn"><?= _t('gen.action.cancel') ?></button>
+		</div>
+	</div>
+</form>
+
+<p>
+	<?= _t('ext.greader_redate.updates') ?>
+	<a href="https://github.com/javerous/freshrss-greader-redate" target="_blank">GitHub</a>.
+</p>

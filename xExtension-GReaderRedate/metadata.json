@@ -1,0 +1,8 @@
+{
+	"name": "GReader Redate",
+	"author": "Julien Avérous",
+	"description": "Use published date instead of fetching date.",
+	"version": 1.0,
+	"entrypoint": "GReaderRedate",
+	"type": "user"
+}
