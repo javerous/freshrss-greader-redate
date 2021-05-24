@@ -15,7 +15,7 @@ From its side, FreshRSS define those fields this way:
 
 `crawlTimeMsec` & `timestampUsec` are themselves tricked, so they are ordered (at the µs) in the same order as publishing date.
 
-It happens that some RSS clients compatible with GReader API, like [EasyRSS](https://github.com/Alkarex/EasyRSS) or [Reeder](https://reederapp.com), are extracting only the `timestampUsec` field, and use it to order articles and date them in their user interface.
+It happens that some RSS clients compatible with GReader API, like [EasyRSS](https://github.com/Alkarex/EasyRSS) or [Reeder](https://reederapp.com) or [FeedMe](https://github.com/seazon/FeedMe), are extracting only the `timestampUsec` field, and use it to order articles and date them in their user interface.
 
 It can be unfortunate, because at the moment you subscribe to a new feed, all articles show almost the same date (and appear in what look like a random order in Reeder), as all articles are fetched almost at the same time.
 
@@ -37,3 +37,6 @@ To use this extension, you need to copy the `xExtension-GReaderRedate` directory
 
 1.0:
 * Initial release.
+
+1.1:
+* Added support for Feedme.
