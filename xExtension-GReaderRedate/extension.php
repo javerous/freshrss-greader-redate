@@ -14,6 +14,7 @@ class GReaderRedateExtension extends Minz_Extension
 		{
 			FreshRSS_Context::$user_conf->gr_reeder_enable = (bool)Minz_Request::param('gr_reeder', 0);
 			FreshRSS_Context::$user_conf->gr_easyrss_enable = (bool)Minz_Request::param('gr_easyrss', 0);
+			FreshRSS_Context::$user_conf->gr_feedme_enable = (bool)Minz_Request::param('gr_feedme', 0);
 
 			FreshRSS_Context::$user_conf->save();
 		}
@@ -39,6 +40,10 @@ class GReaderRedateExtension extends Minz_Extension
 		if (!$redate && $this->isReederEnabled() && (preg_match('#Reeder/[0-9]+#', $user_agent, $matches) >= 1))
 			$redate = true;
 
+		// > Match FeedMe.
+		if (!$redate && $this->isReederEnabled() && (preg_match('#FeedMe/[0-9]+#', $user_agent, $matches) >= 1))
+			$redate = true;
+		
 		// > Match EasyRSS. XXX it's *very* weak, but this thing identify iteself only by android...
 		if (!$redate && $this->isEasyRSSEnabled() && (preg_match('#Android[ \t]+[0-9]+#', $user_agent, $matches) >= 1))
 			$redate = true;
@@ -62,6 +67,14 @@ class GReaderRedateExtension extends Minz_Extension
 	{
 		if (FreshRSS_Context::$user_conf->gr_easyrss_enable !== null)
 			return (bool)FreshRSS_Context::$user_conf->gr_easyrss_enable;
+
+		return false;
+	}
+	
+	public function isFeedMeEnabled()
+	{
+		if (FreshRSS_Context::$user_conf->gr_feedme_enable !== null)
+			return (bool)FreshRSS_Context::$user_conf->gr_feedme_enable;
 
 		return false;
 	}
