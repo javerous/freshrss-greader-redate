@@ -20,6 +20,13 @@
 			</label>
 		</div>
 
+		<div class="group-controls">
+			<label class="checkbox" for="gr_feedme">
+				<input type="checkbox" id="gr_feedme" name="gr_feedme" value="1" <?= $this->isFeedMeEnabled() ? 'checked' : '' ?>>
+				<?= _t('ext.greader_redate.feed_me') ?>
+			</label>
+		</div>
+
 	</div>
 
 	<div class="form-group form-actions">
