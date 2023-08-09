@@ -40,3 +40,6 @@ To use this extension, you need to copy the `xExtension-GReaderRedate` directory
 
 1.1:
 * Added support for Feedme.
+
+1.2:
+* Fix support for Feedme.

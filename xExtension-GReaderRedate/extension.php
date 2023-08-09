@@ -41,7 +41,7 @@ class GReaderRedateExtension extends Minz_Extension
 			$redate = true;
 
 		// > Match FeedMe.
-		if (!$redate && $this->isReederEnabled() && (preg_match('#FeedMe/[0-9]+#', $user_agent, $matches) >= 1))
+		if (!$redate && $this->isFeedMeEnabled() && (preg_match('#FeedMe/[0-9]+#', $user_agent, $matches) >= 1))
 			$redate = true;
 		
 		// > Match EasyRSS. XXX it's *very* weak, but this thing identify iteself only by android...

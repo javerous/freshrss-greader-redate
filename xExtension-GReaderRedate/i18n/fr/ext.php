@@ -6,6 +6,7 @@ return array(
 		'instruction' => 'Veuillez sélectionner les clients RSS auxquels appliquer ce remplacement :',
 		'reeder' => 'Reeder',
 		'easy_rss' => 'EasyRSS'
+		'feed_me' => 'FeedMe',
 		'updates' => 'Vous pouvez trouver la dernière mise à jour de l’extension sur',
 	),
 );
