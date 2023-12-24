@@ -12,9 +12,9 @@ class GReaderRedateExtension extends Minz_Extension
 	{
 		if (Minz_Request::isPost())
 		{
-			FreshRSS_Context::$user_conf->gr_reeder_enable = (bool)Minz_Request::param('gr_reeder', 0);
-			FreshRSS_Context::$user_conf->gr_easyrss_enable = (bool)Minz_Request::param('gr_easyrss', 0);
-			FreshRSS_Context::$user_conf->gr_feedme_enable = (bool)Minz_Request::param('gr_feedme', 0);
+			FreshRSS_Context::$user_conf->gr_reeder_enable = Minz_Request::paramBoolean('gr_reeder');
+			FreshRSS_Context::$user_conf->gr_easyrss_enable = Minz_Request::paramBoolean('gr_easyrss');
+			FreshRSS_Context::$user_conf->gr_feedme_enable = Minz_Request::paramBoolean('gr_feedme');
 
 			FreshRSS_Context::$user_conf->save();
 		}
